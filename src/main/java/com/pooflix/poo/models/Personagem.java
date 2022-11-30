@@ -23,5 +23,29 @@ public class Personagem {
 	
     private LinkedList<Performance> perfomances;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public LinkedList<Performance> getPerfomances() {
+		return perfomances;
+	}
+
+	public void setPerfomances(LinkedList<Performance> perfomances) {
+		this.perfomances = perfomances;
+	}
+
 	
 }
