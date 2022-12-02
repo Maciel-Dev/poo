@@ -32,6 +32,6 @@ public class PersonagemController {
     
     @RequestMapping(value="/c", method=RequestMethod.POST)
     public String index() {
-    	return "redirect:/cadastrarAtor";
+    	return "redirect:/cadastrarPersonagem";
     }
 }

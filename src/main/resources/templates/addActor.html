@@ -43,6 +43,11 @@
 		</div>
 	</div>
 
+	<p th:each="act : ${listempt}">
+		<span th:text="${act.nome}"></span>
+		<span th:text="${act.nacionalidade}"></span>
+	</p>
+
 
 
 

@@ -24,7 +24,7 @@ public class Episodio {
     private String titulo;
 	
 	
-	@Column(name = "Resumo")
+	@Column(name = "resumo")
     public String resumo;
 	
 	
