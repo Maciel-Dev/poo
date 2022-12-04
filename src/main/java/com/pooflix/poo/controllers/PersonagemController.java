@@ -29,9 +29,4 @@ public class PersonagemController {
     	
     	return "redirect:/";
     }
-    
-    @RequestMapping(value="/c", method=RequestMethod.POST)
-    public String index() {
-    	return "redirect:/cadastrarPersonagem";
-    }
 }
