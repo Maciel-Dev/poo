@@ -8,16 +8,41 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
 
     <h1 class="text-center">Bem-Vindo ao POOFLIX</h1>
     <h4 class="text-center">Serviço de Registro de Filmes</h4>
 
-    
 
+    <div class="row text-center mt-3 mb-3">
+        <form action="/cadastrarSerie" method="get">
+            <button type="submit" class="btn btn-primary">Registrar Série</button>
+        </form>
+    </div>
+
+
+    <h2 class="text-center mt-5">Tabela Séries</h2>
+    
+    <table class="table col-sm-6 table-hover table-responsive">
+        
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Título</th>
+                <th scope="col">Faixa Etária</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="serie: ${series}">
+                <th scope="row" th:text="${serie.id}" />
+                <td th:text="${serie.titulo}" />
+                <td th:text="${serie.classetaria}" />
+            </tr>
+        </tbody>
+        
+    </table>
 
     <h2 class="text-center mt-5">Tabela Atores</h2>
-
     <table class="table col-sm-6 table-hover table-responsive">
 
         <thead>
@@ -79,9 +104,6 @@
         </tbody>
 
     </table>
-
-
-
 </body>
 
 </html>

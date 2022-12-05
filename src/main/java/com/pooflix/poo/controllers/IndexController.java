@@ -1,6 +1,7 @@
 package com.pooflix.poo.controllers;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.pooflix.poo.models.Actor;
 import com.pooflix.poo.models.Episodio;
 import com.pooflix.poo.models.Personagem;
+import com.pooflix.poo.models.Serie;
 import com.pooflix.poo.repositorie.ActorDto;
 import com.pooflix.poo.repositorie.EpisodioDto;
 import com.pooflix.poo.repositorie.PersonagemDto;
+import com.pooflix.poo.repositorie.SerieDto;
 
 @Controller
 public class IndexController {
@@ -27,10 +30,14 @@ public class IndexController {
 	@Autowired
 	private EpisodioDto ep;
 	
+	@Autowired
+	private SerieDto se;
+	
 	
 	
 	@RequestMapping("/")
 	public String index(Model model) {
+		
 		List<Actor> act = (List<Actor>) ac.findAll();
 		model.addAttribute("actors", act);
 		
@@ -39,6 +46,11 @@ public class IndexController {
 		
 		List<Episodio> episodio = (List<Episodio>) ep.findAll();
 		model.addAttribute("episodios", episodio);
+		
+		List<Serie> serie = (List<Serie>) se.findAll();
+		model.addAttribute("series", serie);
+		
+		
 		return "index";
 	}	
 	

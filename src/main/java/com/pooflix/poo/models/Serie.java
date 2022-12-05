@@ -49,6 +49,14 @@ public class Serie {
 		return classetaria;
 	}
 
+	public List<Episodio> getEpisodio() {
+		return episodio;
+	}
+
+	public void setEpisodio(List<Episodio> episodio) {
+		this.episodio = episodio;
+	}
+
 	public void setClassetaria(int classetaria) {
 		this.classetaria = classetaria;
 	}
