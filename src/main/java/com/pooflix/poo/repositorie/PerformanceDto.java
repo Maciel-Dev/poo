@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.pooflix.poo.models.Performance;
 
-public interface PerformanceDto extends CrudRepository<Performance, Long> {
+public interface PerformanceDto extends CrudRepository<Performance, Integer> {
 
 }

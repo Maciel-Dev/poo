@@ -1,11 +1,14 @@
 package com.pooflix.poo.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,9 +25,9 @@ public class Actor {
 	@Column(name = "nacionalidade")
 	private String nacionalidade;
 	
-	@OneToOne(mappedBy = "id")
-    private Performance person;
-
+	@OneToMany(mappedBy = "actors")
+	private List<Performance> performances;
+	
 	public int getId() {
 		return id;
 	}

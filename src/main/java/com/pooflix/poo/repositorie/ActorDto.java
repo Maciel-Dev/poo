@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.pooflix.poo.models.Actor;
 
-public interface ActorDto extends CrudRepository<Actor, Long> {
+public interface ActorDto extends CrudRepository<Actor, Integer> {
 
 }
