@@ -22,6 +22,8 @@
 
 
     <h2 class="text-center mt-5">Tabela Séries</h2>
+
+    <a th:href="|@{/delete/${actor.id}}|" class="btn btn-danger">Delete</a>
     
     <table class="table col-sm-6 table-hover table-responsive">
         
@@ -37,6 +39,11 @@
                 <th scope="row" th:text="${serie.id}" />
                 <td th:text="${serie.titulo}" />
                 <td th:text="${serie.classetaria}" />
+                <!-- <form action="/delete" method="post">
+                    <button type="submit" class="btn btn-primary">
+                        DELETAR
+                    </button>
+                </form> -->
             </tr>
         </tbody>
         

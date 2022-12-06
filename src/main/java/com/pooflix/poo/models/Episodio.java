@@ -1,15 +1,13 @@
 package com.pooflix.poo.models;
 
-import java.util.LinkedList;
-import java.util.List;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +15,7 @@ import javax.persistence.Table;
 public class Episodio {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	@Column(name = "temporada")
@@ -26,16 +24,8 @@ public class Episodio {
 	@Column(name = "titulo")
     private String titulo;
 	
-	
 	@Column(name = "resumo")
     public String resumo;
-	
-	@ManyToOne(targetEntity = Serie.class)
-	private List<Serie> series;
-	
-	@OneToMany(mappedBy = "episodios")
-	private List<Personagem> personagens;
-
 
 	public int getId() {
 		return id;

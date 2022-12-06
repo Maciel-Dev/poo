@@ -1,15 +1,11 @@
 package com.pooflix.poo.models;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,9 +21,6 @@ public class Serie {
 	
 	@Column(name = "classeEtaria")
     private int classetaria;
-	
-	@OneToMany(mappedBy = "series")
-	private List<Episodio> episodio;
 
 	public int getId() {
 		return id;
@@ -47,14 +40,6 @@ public class Serie {
 
 	public int getClassetaria() {
 		return classetaria;
-	}
-
-	public List<Episodio> getEpisodio() {
-		return episodio;
-	}
-
-	public void setEpisodio(List<Episodio> episodio) {
-		this.episodio = episodio;
 	}
 
 	public void setClassetaria(int classetaria) {

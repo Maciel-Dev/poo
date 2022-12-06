@@ -19,7 +19,7 @@
 					Titulo: <input type="text" value="" name="titulo" />
 				</div>
 				<div class="col mb-6">
-					Temporada: <input type="text" value="" name="resumo" />
+					Temporada: <input type="text" value="" name="temporada" />
 				</div>
 			</div>
 			<div class="row text-center">
@@ -27,26 +27,28 @@
 				<textarea class="form-control" name="resumo" id="textAreaResumo" rows="7"></textarea>
 
 			</div>
-			<div class="row text-center">
+			<!-- <div class="row text-center">
 				<div class="column-sm-6">
 					<h2 class="text-center">Seleção da Série</h2>
-					<select class="form-control" id="dropDownList">
+					<select th:field="*{id_serie}" class="form-control" id="dropDownList" required>
 						<option>Selecione a Série:</option>
-						<option th:each="serie : ${series}" th:value="${serie.id}" th:text="${serie.titulo}"></option>
+						<option th:each="serie : ${listSerie}" th:value="${serie.id}" th:text="${serie.titulo}"></option>
 					</select>
 				</div>
-			</div>
+			</div> -->
 
 			<!-- LINHA INICIO-->
 			<div class="row">
 				<div class="col">
 					<button class="btn btn-primary" type="submit">Salvar</button>
-					<form action="/c" method="post">
-						<button class="btn btn-primary" type="submit" value="Submit">Voltar</button>
-					</form>
-				</div>
+		</form>
+		<form action="/c" method="post">
+			<button class="btn btn-primary" type="submit" value="Submit">Voltar</button>
+		</form>
+	</div>
 
-			</div>
+	</div>
+
 	</div>
 
 

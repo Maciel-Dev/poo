@@ -1,7 +1,6 @@
 package com.pooflix.poo.controllers;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +31,6 @@ public class IndexController {
 	
 	@Autowired
 	private SerieDto se;
-	
-	
 	
 	@RequestMapping("/")
 	public String index(Model model) {

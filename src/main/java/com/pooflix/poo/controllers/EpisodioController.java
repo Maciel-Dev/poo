@@ -25,14 +25,19 @@ public class EpisodioController {
     @RequestMapping(value="/cadastrarEpisodio", method=RequestMethod.GET)
     public String form(Model model) {
     	
-    	List<Serie> serie = (List<Serie>) se.findAll();
-		model.addAttribute("series", serie);
     	
+    	List<Serie> listSerie = (List<Serie>) se.findAll();
+    	
+    	model.addAttribute("episodio", new Episodio());
+		model.addAttribute("listSerie", listSerie);
+		
+		
     	return "addEpisodio";
     }
     
     @RequestMapping(value="/cadastrarEpisodio", method=RequestMethod.POST)
     public String form(Episodio episodio) {
+    	
     	
     	ep.save(episodio);
     	return "redirect:/";
