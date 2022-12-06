@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.pooflix.poo"},{"l":"com.pooflix.poo.controllers"},{"l":"com.pooflix.poo.dto"},{"l":"com.pooflix.poo.models"},{"l":"com.pooflix.poo.repositorie"}];updateSearchResults();
