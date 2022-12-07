@@ -1,13 +1,10 @@
 package com.pooflix.poo.models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,7 +23,29 @@ public class Episodio {
 	
 	@Column(name = "resumo")
     public String resumo;
+	
+	@Column(name = "id_seriado")
+	public int id_seriado;
+	
+	@Column(name = "id_categoria")
+	public int id_categoria;
+	
+	public int getId_categoria() {
+		return id_categoria;
+	}
 
+	public void setId_categoria(int id_categoria) {
+		this.id_categoria = id_categoria;
+	}
+
+	public int getId_seriado() {
+		return id_seriado;
+	}
+
+	public void setId_seriado(int id_seriado) {
+		this.id_seriado = id_seriado;
+	}
+	
 	public int getId() {
 		return id;
 	}

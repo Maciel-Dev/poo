@@ -2,7 +2,6 @@ package com.pooflix.poo.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,6 +20,17 @@ public class Serie {
 	
 	@Column(name = "classeEtaria")
     private int classetaria;
+
+	@Column(name = "id_categoria")
+	private int id_categoria;
+
+	public int getId_categoria() {
+		return id_categoria;
+	}
+
+	public void setId_categoria(int id_categoria) {
+		this.id_categoria = id_categoria;
+	}
 
 	public int getId() {
 		return id;

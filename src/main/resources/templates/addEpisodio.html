@@ -13,7 +13,7 @@
 	<div class="text-center">
 		<h1>Adicionar Episodio</h1>
 
-		<form class="" method="post" action="cadastrarEpisodio">
+		<form class="" method="post" action="cadastrarEpisodio" th:object="${episodio}">
 			<div class="row">
 				<div class="col mb-6">
 					Titulo: <input type="text" value="" name="titulo" />
@@ -27,22 +27,31 @@
 				<textarea class="form-control" name="resumo" id="textAreaResumo" rows="7"></textarea>
 
 			</div>
-			<!-- <div class="row text-center">
+
+			<div class="row text-center">
 				<div class="column-sm-6">
 					<h2 class="text-center">Seleção da Série</h2>
-					<select th:field="*{id_serie}" class="form-control" id="dropDownList" required>
-						<option>Selecione a Série:</option>
-						<option th:each="serie : ${listSerie}" th:value="${serie.id}" th:text="${serie.titulo}"></option>
+					<select th:field="*{id_seriado}" class="form-control" id="dropDownList" required>
+						<option th:each="serie : ${listSerie}" th:value="${serie.id}" th:text="${serie.titulo}" name="id_seriado" value="id_seriado"></option>
 					</select>
 				</div>
-			</div> -->
+			</div>
+
+			<div class="row text-center">
+				<div class="column-sm-6">
+					<h2 class="text-center">Seleção da Categoria</h2>
+					<select th:field="*{id_categoria}" class="form-control" id="dropDownList" required>
+						<option th:each="categoria : ${listCategoria}" th:value="${categoria.id}" th:text="${categoria.nome}" name="id_categoria" value="id_categoria"></option>
+					</select>
+				</div>
+			</div>
 
 			<!-- LINHA INICIO-->
 			<div class="row">
 				<div class="col">
 					<button class="btn btn-primary" type="submit">Salvar</button>
 		</form>
-		<form action="/c" method="post">
+		<form action="/" method="post">
 			<button class="btn btn-primary" type="submit" value="Submit">Voltar</button>
 		</form>
 	</div>

@@ -11,7 +11,7 @@
 <body style="overflow-x: hidden;">
 	<h1 class="text-center mb-5">Registrando Uma Série</h1>
 
-	<form action="/cadastrarSerie" method="post">
+	<form action="/cadastrarSerie" method="post" th:object="${serie}">
 		<div class="row text-center">
 			<div class="col-sm-6">
 				Título: <input type="text" value="" name="titulo" />
@@ -20,8 +20,16 @@
 				Faixa Etária: <input type="text" value="" name="classetaria" />
 			</div>
 			<div class="row text-center">
+				<div class="column-sm-6">
+					<h2 class="text-center">Seleção da Categoria</h2>
+					<select th:field="*{id_categoria}" class="form-control" id="dropDownList" required>
+						<option th:each="categoria : ${listCategoria}" th:value="${categoria.id}" th:text="${categoria.nome}" name="id_categoria" value="id_categoria"></option>
+					</select>
+				</div>
+			</div>
+			<div class="row text-center">
 				<div class="col">
-					<button type="submit" class="btn btn-primary">Salvar</button>
+					<button type="submit" class="btn btn-primary mt-5">Salvar</button>
 
 				</div>
 			</div>
@@ -53,7 +61,7 @@
 				</form>
 			</div>
 			<div class="col-sm-4">
-				<form action="/c" method="get">
+				<form action="/cadastrarCategoria" method="get">
 					<button type="submit" class="btn btn-secondary">Registrar Categoria</button>
 				</form>
 			</div>
